@@ -5,6 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import countries from './Country-capital';
 
+import images from '../images'
+
 
 const styles = theme => ({
   container: {
@@ -19,21 +21,16 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
   }
 });
-
-const rand = {
-
-}
-
-
+const recapth = images[Math.floor(Math.random() * images.length)];
+console.log(recapth)
 class OutlinedTextFields extends React.Component {
   state = {
     city: 'Yerevan',
-    empty: ''
   };
 
   handleChange = name => event => {
     this.setState({
-        [name]:rand
+        [name]:this.setState.value
     });
   };
 
@@ -97,6 +94,7 @@ class OutlinedTextFields extends React.Component {
             marginRight: "8px",
             maxWidth: "400px",
             minWidth: "400px",
+            borderColor: "red"
           }}
         />
 
@@ -159,9 +157,16 @@ class OutlinedTextFields extends React.Component {
               {option.city}
             </option>
           ))}
-          
+          {}
         </TextField>
-    
+        <div>
+        <img 
+        style={{
+          marginLeft: "50px",
+        }}
+        src={recapth}
+        >
+        </img>
         <TextField
           id="outlined-bare"
           className={classes.textField}
@@ -169,15 +174,15 @@ class OutlinedTextFields extends React.Component {
           margin="normal"
           variant="outlined"
           style={{
-            marginLeft: "8px",
-            marginRight: "8px",
+            marginLeft: "22px",
             maxWidth: "400px",
-            minWidth: "400px",
             flexDirection: "column"
           }}
+          helperText="Please enter the 
+           text exactly as shwon."
         >
-        <createCaptcha />
         </TextField>
+        </div>
         <Button variant="contained" color="primary" className={classes.button}>
         Registr
         </Button>
