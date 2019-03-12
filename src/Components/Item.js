@@ -26,6 +26,10 @@ console.log(recapth)
 class OutlinedTextFields extends React.Component {
   state = {
     city: 'Yerevan',
+    name: 'Test123',
+    phonenumber: 'number',
+    password: 'secretpassword',
+    confirmpass: 'secretpassword'
   };
 
   handleChange = name => event => {
@@ -65,8 +69,8 @@ class OutlinedTextFields extends React.Component {
         />
 
         <TextField
-          disabled
           label="Phone number"
+          value={this.state.phonenumber}
           className={classes.textField}
           margin="normal"
           variant="outlined"
@@ -82,25 +86,26 @@ class OutlinedTextFields extends React.Component {
         <TextField
           id="outlined-email-input"
           label="Email"
+          value={this.state.email}
           className={classes.textField}
           type="email"
           name="email"
           autoComplete="email"
           margin="normal"
           variant="outlined"
-          helperText="Requires verification. Will not be publishd"
+          helperText="(Please enter valid Email)"
           style={{
-            marginLeft: "8px",
+            marginLeft: "48px",
             marginRight: "8px",
             maxWidth: "400px",
-            minWidth: "400px",
-            borderColor: "red"
+            minWidth: "445px",
           }}
         />
 
         <TextField
           id="outlined-password-input"
-          label="Password"
+          label="Pasword"
+          value={this.state.password}
           className={classes.textField}
           type="password"
           autoComplete="current-password"
@@ -115,24 +120,25 @@ class OutlinedTextFields extends React.Component {
         />
         <TextField
           label="Confirm Password"
+          value={this.state.confirmpass}
           className={classes.textField}
-          type="password"
+          type="text"
           autoComplete="current-password"
           margin="normal"
           variant="outlined"
           type="text"
           style={{
-            marginLeft: "8px",
+            marginLeft: "48px",
             marginRight: "8px",
             maxWidth: "400px",
-            minWidth: "400px",
+            minWidth: "445px",
           }}
         />
         
         <TextField
           id="outlined-select-currency-native"
           select
-          label="City"
+          label="Country"
           className={classes.textField}
           value={this.state.city}
           onChange={this.handleChange('city')}
@@ -148,7 +154,7 @@ class OutlinedTextFields extends React.Component {
               className: classes.menu,
             },
           }}
-          helperText="Select your city"
+          helperText="Select your country"
           margin="normal"
           variant="outlined"
         >
@@ -159,7 +165,7 @@ class OutlinedTextFields extends React.Component {
           ))}
           {}
         </TextField>
-        <div>
+        <div className="footer">
         <img 
         style={{
           marginLeft: "50px",
@@ -176,16 +182,24 @@ class OutlinedTextFields extends React.Component {
           style={{
             marginLeft: "22px",
             maxWidth: "400px",
-            flexDirection: "column"
+            flexDirection: "column",
+            helperText: "color: #f44336",
           }}
           helperText="Please enter the 
            text exactly as shwon."
         >
         </TextField>
-        </div>
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button
+          variant="contained" 
+          color="primary" 
+          className={classes.button}
+          style={{
+            marginRight: "-167px"
+          }}
+          >
         Registr
         </Button>
+        </div>
     </form>
     );
   }

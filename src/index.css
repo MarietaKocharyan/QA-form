@@ -24,10 +24,6 @@ body {
   align-items: center,
 }
 
-.OutlinedTextFields-container-29{
-  display: flex;
-  flex-direction: column;
-}
-.classes.button{
-
+#outlined-email-input-helper-text {
+  color: red;
 }
