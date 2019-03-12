@@ -22,7 +22,6 @@ const styles = theme => ({
   }
 });
 const recapth = images[Math.floor(Math.random() * images.length)];
-console.log(recapth)
 class OutlinedTextFields extends React.Component {
   state = {
     city: 'Yerevan',
@@ -34,10 +33,9 @@ class OutlinedTextFields extends React.Component {
 
   handleChange = name => event => {
     this.setState({
-        [name]:this.setState.value
+      [name]: event.target.value,
     });
   };
-
 
   render() {
     const { classes } = this.props;
@@ -108,6 +106,7 @@ class OutlinedTextFields extends React.Component {
           value={this.state.password}
           className={classes.textField}
           type="password"
+          onChange={this.handleChange('password')}
           autoComplete="current-password"
           margin="normal"
           variant="outlined"
@@ -123,6 +122,7 @@ class OutlinedTextFields extends React.Component {
           value={this.state.confirmpass}
           className={classes.textField}
           type="text"
+          onChange={this.handleChange('confirmpass')}
           autoComplete="current-password"
           margin="normal"
           variant="outlined"
@@ -134,7 +134,7 @@ class OutlinedTextFields extends React.Component {
             minWidth: "445px",
           }}
         />
-        
+      
         <TextField
           id="outlined-select-currency-native"
           select
@@ -199,7 +199,7 @@ class OutlinedTextFields extends React.Component {
           >
         Registr
         </Button>
-        </div>
+        </div> 
     </form>
     );
   }
